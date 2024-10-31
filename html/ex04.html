@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea cols="70" rows="10"></textarea>
+    <div style="background: pink;">블럭</div>
+    <span style="background:#5CD1E5;">인라인</span>
+    <span style="background:#63ff01;">인라인</span>
+    <div style="background : pink">블럭</div>
+
+    <div style="background: gold;">
+        <span style="background:#5CD1E5;">인라인</span>
+        <span style="background:#63ff01;">인라인</span>
+    </div>
+    <hr>
+    <form>
+        <input type="text" placeholder="input id" required><br>
+        <input type="password"><br>
+        <input type="email"><br>
+        <input type="tel" pattern="\d{3}-\d{3,4}-\d{4}" placeholder="예)010-1234-1234"><br>
+        <input type="text" readonly value="읽기전용"><br>
+        <input type="submit" value="전송"><br>
+        <input type="button" value="이전" disabled><br>
+        <input type="button" value="다음"><br>
+    </form>
+    <hr>
+    <form action="ex01.html" method="get">
+        <fieldset style="width: 200px;">
+            <legend>취미 조사</legend>
+            <input id="id"><br>
+            <label for="h1">책 읽기</label>
+            <input type="checkbox" id="h1">
+            
+            멍 <input type="checkbox" >
+
+            <label >책 읽기</label>
+            <input type="checkbox" >
+
+            <label for="id">id 입력</label>
+        </fieldset>
+        <hr>
+        <select name="test" size="2">
+            <option>사과</option>
+            <option>배</option>
+            <option>바나나</option>
+        </select>
+        <hr>
+        <input type="text" placeholder="input name" name="n1"><br>
+        <input type="text" placeholder="input address" name="n2"><br>
+        <input type="reset" value="reset"><br>
+        <input type="submit" vlaue="전송"><br>
+        <input type="button" value="버튼"><br>
+    </form>
+    <hr>
+    취미1<input type="checkbox">
+    취미2<input type="checkbox" checked>
+    취미3<input type="checkbox">
+    취미4<input type="checkbox">
+    <hr>
+    10대 <input type="radio" name="age" checked>
+    20대 <input type="radio" name="age">
+    30대 <input type="radio" name="age">
+    40대 <input type="radio" name="age">
+    <hr>
+    <input type="color"><br>
+    <input type="range"><br>
+    <input type="radio"><br>
+    <input type="checkbox"><br>
+    <input type="hidden"><br> 
+    <hr>
+    <input type="text" value="text value" size="10" maxlength="5"><br>
+    <input type="password" value="aaaa"><br>
+    <input type="email" placeholder="test@test.com"><br>
+    <input type="search"><br>
+    <input type="tel" value="010-1234-1234"><br>
+    <input type="num" min="1" max="10" value="1"><br>
+    <hr>
+    <input type="button" value="버튼"><br>
+    <input type="submit" value="서브밋"><br>
+    <input type="reset" value="초기화"><br>
+    <input type="image" src="IMG_9178.jfif" width="50" alt="최고심씨"><br>
+    <input type="file"><br>
+</body>
+</html>
