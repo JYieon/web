@@ -1,0 +1,35 @@
+img{width: 200px; height: 200px;}
+#div7{
+    width: 200px; height: 500px;
+    border:1px solid gray;
+    border-radius: 10px;
+}
+#div7 div{
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+img:hover{
+    transform:scale(1.1);
+    transition: all 0.1s;
+}
+#div6{
+    overflow: auto;
+    height: 100px; width:100px;
+    background: aqua;
+}
+
+a{color:black; text-decoration: none;}
+a:hover{
+    border-bottom: 1px solid black
+}
+#div5{
+    overflow: auto;
+    background: blue; height: 100px;
+}
+#div5 div{background: red; width: 200px; height: 200px;}
+#div1{width:200px; height:200px; border:3px solid black;}
+#div2{width:200px; height:200px; border:3px double green;}
+#div3{width:200px; height:200px; border:3px dashed red; border-radius: 20px;}
+#div4{width:200px; height:200px; border:3px dotted gray; border-radius: 200px; overflow: hidden;}
+#div4 > img{width:200px; height:200px; }

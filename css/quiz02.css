@@ -1,0 +1,33 @@
+img{width: 100px; height: 100px; overflow: hidden;}
+img:hover{transform: scale(1.1);}
+
+#logo img {width: 100px; border-radius: 50px;}
+
+.item {
+    width: 100px; height: 200px;
+    border:1px solid gray;
+    border-radius: 10px;
+    color: blue;
+    
+    & > div > a {
+        color: black;
+        text-decoration: none;
+    }
+    & > div > a:hover{
+        color: red;
+    }
+    & > div:nth-child(3){
+        text-align: right;
+        margin: 25px 0 0 0; 
+    }
+}
+button {
+    border-radius: 20px;
+    background: gray;
+    color : white;
+    border: none;
+}
+button:hover{
+    background: aqua;
+}
+

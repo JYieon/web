@@ -1,0 +1,28 @@
+h2 {color : red;}
+#div1 {background: gold; /*width: 200px; height: 200px;*/}
+.class01 {background: khaki; /*width:200px; height:200px;*/}
+.class02 {background: hotpink; /*width:200px; height:200px;*/}
+#div, .class01, .class02{
+    width:200px;
+    height:200px;
+}
+#div2{ color: aqua;}
+.class03{background: gray;}
+.class04{font-size: 30px;}
+
+#div3{
+    color: blue;
+    font-size: 30px;
+    background: gold;
+}
+#div3{
+    color:red;
+    width: 100px;
+    height: 100px;
+} 
+/* 동일한 이름 설정시 마지막 설정값이 들어감. 없는 설정 입력시 그냥 추가됨 */
+
+#h5{background: yellow;}
+.h5{background: blue;}
+h5{background: red;}
+/* 우선순위 id > class > head */

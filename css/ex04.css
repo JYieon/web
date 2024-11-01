@@ -1,0 +1,29 @@
+img{width:100px; height:100px; display: none;}
+#div5{background: yellowgreen;}
+#div5:hover{
+    & > img {display: block;}
+    & > h3 {display: none;}
+}
+/* #div5:hover > img{
+    display: block;
+}
+#div5:hover > h3{
+    display:none;
+} */
+
+#div2{
+    background: red; height: 100px;
+}
+#div3{
+    background: gray; width :100px; height: 100px;
+}
+#div4{background: gold;}
+#div1 {background: red;}
+#h1 {background: gold;}
+#span {background: green; display: block;}
+#a {background: gray;}
+
+#div1, #h1, #span, #a{
+    width: 100px;
+    height: 100px;
+}

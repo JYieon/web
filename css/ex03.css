@@ -1,0 +1,71 @@
+*{margin: 0; padding:0}
+
+#div9, #div10, #div11, #div12{
+    width:100px;
+    height:100px;
+    background: red;
+}
+#div9:hover {
+    background: green;
+    width:400px;
+
+}
+#div10 > div{
+    width:50px;
+    height:50px;
+    background: blue;
+}
+#div10:hover div{
+    background: gray;
+}
+#div11:hover + #div12{
+    background: green;
+    width: 50px;
+    height: 50px;
+}
+
+#div6, #div7, #div8{
+    width:100px;
+    height:100px;
+}
+#div6{background: #FF0000;}
+#div7{background: rgb(123,123,234);}
+#div8{background: rgba(242, 255, 0, 0.446);}
+
+div{background: skyblue;}
+#div5 h3:nth-child(2){
+    background: peru;
+}
+#div5 h4:nth-child(5){
+    background: peru;
+}
+#div5 h4:nth-of-type(3){
+    background: gold;
+}
+
+
+#div4 ~ div{background: red;}
+#div4 + div{background: green;}
+
+#div3 {
+    width:200px;
+    height:200px;
+    background: gold;
+}
+#div3  div > h3{color:red} 
+
+#div2 {
+    width:200px;
+    height:200px;
+    background: yellowgreen;
+}
+#div2 > h3{color:red} 
+/* 자식 태그(손자는 적용안됨) */
+
+#div1 {
+    width:200px;
+    height:200px;
+    background: gray;
+}
+#div1 h3{color:red}
+/* 하위 태그 전부 적용 */
