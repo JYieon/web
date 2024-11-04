@@ -1,0 +1,34 @@
+
+* {margin: 0; padding: 0;}
+#nav{
+    width: 700px;
+}
+#nav > ul{
+    background-color: orange;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+#nav > ul > li{
+    background-color: aqua;
+    width: 100px;
+    height: 50px;
+    line-height: 50px; /* 글자간격*/
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+}
+#nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 3px;
+    &:hover{
+        color: black;
+        border-bottom: 3px solid olive;
+        transition: 0.25s;
+        padding-bottom: 3px;
+    }
+}

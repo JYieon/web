@@ -1,0 +1,71 @@
+#div1 { width : 700px; margin: 0 auto; }
+#div1 div:nth-of-type(1){ height: 50px; background-color: red; }
+#div1 div:nth-of-type(2){ display: flex;
+    & > div { height: 300px;}
+    & div:nth-of-type(1){ background-color: gold; width: 200px; }
+    & div:nth-of-type(2){ background-color: green;width: 500px; }
+}
+#div1 div:nth-of-type(3){ background-color: hotpink; height: 50px; }
+
+
+/* 2번 */
+#div2 { width : 700px; margin: 0 auto; }
+#div2 div:nth-of-type(1){
+    height: 50px;
+    background-color: red;
+}
+#div2 div:nth-of-type(2){
+    display: flex;
+    & > div { height: 300px;}
+    & div:nth-of-type(1){
+        background-color: gold;
+        width: 100px;
+    }
+    & div:nth-of-type(2){
+        background-color: green;
+        width: 450px;
+    }
+    & div:nth-of-type(3){
+        background-color: gold;
+        width: 150px;
+    }
+}
+#div2 div:nth-of-type(3){
+    background-color: hotpink;
+    height: 50px;
+}
+
+/* 3번 */
+#div3 { width : 700px; margin: 0 auto; }
+#div3  div:nth-of-type(1){
+    height: 50px;
+    background-color: red;
+}
+/* > 직속 자식이 없으면 손자까지 적용된다 */
+#div3 > div:nth-of-type(2){
+    display: flex;
+    & > div { height: 300px;}
+    & div:nth-of-type(1){
+        background-color: gold;
+        width: 100px;
+    }
+    & div:nth-of-type(2){
+        background-color: green;
+        width: 450px;
+        & > div{
+            width: 300px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: beige;
+            margin-top: 40px;
+        }
+    }
+    & div:nth-of-type(3){
+        background-color: gold;
+        width: 150px;
+    }
+}
+#div3 div:nth-of-type(3){
+    background-color: hotpink;
+    height: 50px;
+}
