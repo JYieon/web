@@ -1,0 +1,39 @@
+#div1{
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    transition: 3s;
+    transition-delay: 2s;
+}
+#div1:hover{
+    width: 300px;
+    background-color: red;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    /* background-color: bisque; */
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+#nav{
+    width: 400px;
+    background-color: gold;
+}
+#menu{
+    background-color: green;
+}
+.menu1{
+    background-color: skyblue;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#menu li:hover .menu1{
+    height: 120px;
+}

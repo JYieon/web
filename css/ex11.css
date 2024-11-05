@@ -1,0 +1,66 @@
+#wrap{
+    width: 300px;
+    height: 800px;
+    background-color: green;
+    margin: 100px auto;
+}
+
+#wrap div{
+    width: 100px;
+    height: 100px;
+    /* background-color: beige; */
+}
+#rel{
+    background-color: red;
+    position:relative;
+    /* relative는 부모태그에 영향을 받는다 */
+    top: 50px;
+    left: 50px;
+}
+#abs{
+    background-color: gold;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+#fix{
+    background-color: navy;
+    position: fixed;
+    /* 고정위치 */
+    top: 50px;
+    left: 50px;
+}
+#abs2{
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+    position: absolute;
+    top : 30px;
+    left: 100px;
+}
+#abs2 div{
+    width: 50px;
+    height: 50px;
+    background-color: gold;
+    top: 50px;
+    right: 20px;
+    position: inherit;
+}
+#div1{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    overflow: auto;
+}
+#div1 div{
+    width: 100px;
+    height: 100px;
+}
+#div1 div:nth-of-type(1){
+    background-color: green;
+    margin-top: 50px;
+}
+#div1 div:nth-of-type(2){
+    background-color: gray;
+    margin-top: 50px;
+}

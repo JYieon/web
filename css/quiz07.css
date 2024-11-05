@@ -1,0 +1,44 @@
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    /* background-color: bisque; */
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+#nav{
+    background-color: gold;
+    width: 400px;
+    
+}
+/* #menu{
+    display: flex;
+} */
+.menu1{
+    width: 100px;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: none;
+    margin-top: -40px;
+    margin-left: 100px;
+    background-color: aqua;
+}
+#menu li:hover .menu1{
+    display: block;
+}
+
+/* .menu1{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#menu li:hover .menu1{
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 10%;
+} */

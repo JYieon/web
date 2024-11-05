@@ -1,0 +1,89 @@
+
+div{
+    width: 100px; 
+    height: 100px;
+}
+#static {
+    background-color: red;
+    z-index: 1;
+}
+#rel{
+    position: relative;
+    background-color: gray;
+    margin-top: -75px; margin-left: 25px;
+    z-index: 2;
+}
+#abs{
+    position: absolute;
+    background-color: green;
+    top:50px; left: 50px;
+    z-index: 3;
+}
+#fix{
+    position:fixed;
+    background-color: gold;
+    top:75px; left: 75px;
+}
+#model{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 8px gray;
+    width: 360px;
+    height: 230px;
+    border-radius: 10px;
+    top : 40%; left: 25%;
+    z-index: 5;
+    display: none;
+}
+a{
+    position: relative;
+    z-index: 6;
+}
+a:hover ~ #model{
+    display: block;
+}
+
+#model > .title{
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 25px;
+    border-bottom: 3px dotted olive;
+    background-color: rgb(255, 255, 255);
+    width: 220px;
+    margin: auto;
+    padding: 10px 0;
+    color: darkcyan;
+}
+#model > form{
+    background-color: white;
+    width: 270px;
+    margin: 0 auto;
+}
+#model > form > input{
+    background-color: white;
+    color:gray;
+    font-size: 20px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lightgray;
+    letter-spacing: 3px;
+    width: 100%;
+    &:focus{
+        border-bottom: 2px solid gray;
+    }
+}
+#model > form > button{
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: lightgray;
+    &:hover{
+        background-color: gray;
+    }
+}
