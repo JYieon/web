@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function load(){
+            let name = prompt("당신의 이름은?")
+            let age = prompt(`${name}님의 나이는?`)
+            age = age-1
+            let addr = prompt(`${name}님의 주소는?`)
+            let msg = `<td>${name}</td><td>만 ${age}</td><td>${addr}</td>`
+            document.querySelector(".op").innerHTML = msg;
+        }
+        
+    </script>
+</head>
+<body onload="load()">
+    <table border="1">
+        <tr style="text-align: center; font-weight: bold;"><td>이름</td><td>나이</td><td>주소</td></tr>
+        <tr class="op"></tr>
+    </table>
+</body>
+</html>
