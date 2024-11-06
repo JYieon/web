@@ -1,0 +1,37 @@
+#div1{
+    width: 100px;
+    height: 100px;
+    background-color: navy;
+    animation: box 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes box{
+    100%{
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
+#left {
+    left: -150px;
+    animation: left 3s;
+    animation-fill-mode: forwards;
+}
+#right{
+    right: -700px;
+    animation: right 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes left{
+    100%{
+        left: 300px;
+        opacity: 1;
+        color: blue;
+    }
+}
+@keyframes right{
+    100%{
+        left: -250px;
+        opacity: 1;
+        color: red;
+    }
+}

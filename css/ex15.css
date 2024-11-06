@@ -1,0 +1,38 @@
+#div1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    animation: abc 10s;
+}
+@keyframes abc{
+    20%{
+        margin-left: 400px;
+    }
+}
+
+#div2{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    animation: aaa 10s;
+}
+@keyframes aaa{
+    100%{
+        margin-left: 400px;
+        background-color: green;
+    }
+}
+
+#div3{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    animation: bbb 5s infinite;
+    animation-delay: 2s;
+}
+@keyframes bbb{
+    50%{
+        margin-left: 400px;
+        background-color: gold;
+    }
+}
