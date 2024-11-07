@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let size = 15;
+        function plus(){
+            size += 3;
+            const div = document.getElementById("div1");
+            div.style.fontSize = size+"px";
+        }
+        function minus(){
+            size -= 3;
+            const div = document.getElementById("div1");
+            div.style.fontSize = size+"px";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">div</div>
+    <button>변경</button>
+    <button onclick="plus()" id="plus">+</button>
+    <button onclick="minus()" id="minus">-</button>
+</body>
+</html>

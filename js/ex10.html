@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function switchFunc(){
+            const num = prompt("값 입력")
+            switch(num){
+                case 1 : console.log("1입력");break;
+                case 2 : console.log("2입력");break;
+                default : console.log("그 외의 값");break;
+            }
+        }
+        // switchFunc()
+        let s; let e;
+        function digClock(){
+            s = new Date()
+            // 현재 시간을 초단위로 얻어온다
+            console.log(s)
+            console.log(s.getFullYear())
+            document.getElementById("clock").innerHTML = s 
+        }
+        function start(){
+            const ss = new Date()
+            s = ss.getTime()
+            console.log("시작 시간 : ", s)
+        }
+        function end(){
+            const ss = new Date()
+            e = ss.getTime()
+            console.log("종료 시간 : ", e)
+            console.log("사용 시간 : ", (e - s)/1000, "초")
+        }
+        function init(){
+            // addEventListener("click",test);
+            let btn = document.getElementById("btn")
+            btn.addEventListener("click",test)
+            addEventListener("keydown", kDown)
+        }
+        // event는 js에서 제공해주는 object
+        function kDown(event){
+            console.log("event : ", event)
+            console.log("event : ", event.code)
+        }
+        function test(){
+            alert("클릭")
+        }
+    </script>
+</head>
+<body onload="init()">
+    <button id="btn">클릭</button>
+    <div id="clock"></div>
+    <button onclick="digClock()">오늘의 날짜</button>
+    <button onclick="start()">시작</button>
+    <button onclick="end()">종료</button>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            addEventListener("keydown", move)
+        }
+        let x = 0; let y = 0;
+        function move(event){
+            console.log(event)
+            let pic = document.getElementById("pic")
+            if(event.key == "ArrowLeft"){
+                x -= 10
+                pic.style.marginLeft = x + "px"
+            }else if(event.key == "ArrowRight"){
+                x += 10
+                pic.style.marginLeft = x + "px"
+            }else if(event.key == "ArrowUp"){
+                y -= 10
+                pic.style.marginTop = y + "px"
+            }else if(event.key == "ArrowDown"){
+                y += 10
+                pic.style.marginTop = y + "px"
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <img id="pic" src="../resources/images/p1.png">
+</body>
+</html>

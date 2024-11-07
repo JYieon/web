@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap { width: 150px; height: 200px; text-align: center;}
+        #pic { width: 150px; height: 150px; }
+    </style>
+    <script>
+        var x = 1;
+        function prev(){
+            x = (x==1) ? 5 : x-1;
+            document.getElementById("pic").src = "../resources/images/고심이0" + x + ".jfif";
+        }
+        function next(){
+            x = (x==5) ? 1 : x+1;
+            document.getElementById("pic").src = "../resources/images/고심이0" + x + ".jfif";
+        }
+
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <img src="../resources/images/고심이01.jfif" id="pic" /> 
+        <input type="button" value="이전사진" onClick="prev()" /> 
+        <input type="button" value="다음사진" onClick="next()" />
+    </div>
+
+    <form action="ex01.html">
+        <button type="button">button</button> 
+        <input type="button" value="submit">
+        <!-- onclink과 같이 사용 -->
+        <button>button</button>
+        <input type="submit" value="submit">
+        <!-- sumit으로 동작. form의 경로로 이동 -->
+    </form>
+</body>
+</html>

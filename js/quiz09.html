@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            addEventListener("keydown", start)
+        }
+        let x = 0
+        let num = 0
+        let time = 0
+        function start(event){
+            let pic = document.getElementById("pic")
+            let text = document.getElementById("title")
+            let div = document.getElementById("div1")
+            text.innerHTML = "START"
+            if(num == 0){
+                time = new Date().getTime()
+                num++
+            }
+            if(num == 9){
+                num = 1
+            }else{
+                num++
+            }
+
+            if(x < 570){
+                if(event.code == "Space"){
+                    x += 10
+                    pic.style.marginLeft = x + "px"
+                    pic.src = "../resources/images/p"+num+".png"
+                }
+            } else{
+                let end = new Date().getTime()
+                text.innerHTML = "종료 : " + ((end-time)/1000)
+                return false
+            }
+        }
+    </script>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 700px;
+            height: 230px;
+            & > img{
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div id="div1">
+        <p style="text-align: center;" id="title">READY</p>
+        <hr>
+        <img id="pic" src="../resources/images/p1.png">
+    </div>
+</body>
+</html>

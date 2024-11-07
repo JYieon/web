@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 전역번수
+        let num=0 
+        function init(){
+            div = document.getElementById("div1")
+            console.log(div)
+            div.className = ""
+            div.innerHTML = "aaaa"
+            document.getElementById("div1").innerHTML = num;
+        }
+        function back(){
+            div.className="back "   
+        }
+        function color(){
+            div.className+="color "
+            // 공백을 더해야지 이름을 추가할 수 있음
+        }
+        function up(){
+            num++;
+            document.getElementById("div1").innerHTML = num;
+        } function down(){
+            num--;
+            document.getElementById("div1").innerHTML = num;
+        }
+    </script>
+    <style>
+        .back{background-color: red;}
+        .color{color:aqua}
+    </style>
+</head>
+<body onload="init()">
+    <div id="div1"></div>
+    <button onclick="up()">up</button>
+    <button onclick="down()">down</button>
+    <hr>
+    <button onclick="back()">배경색</button>
+    <button onclick="color()">글자색</button>
+    <button onclick="init()">초기화</button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func1(){
+            const num = prompt("수 입력")
+            if( num > 10 )
+                document.getElementById("div1").innerHTML = "10보다 크다 : " + num
+            
+            console.log("다음 문장")
+        }
+        function btn(){
+            const txt1 = document.getElementById()
+            const txt2 = document.getElementById()
+            txt2.value = txt1.value
+            txt1.value = ""
+            txt1.focus()
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="text1"><br>
+    <input type="text" id="text2"><br>
+    <button onclick="btn()">클릭</button>
+    <hr>
+    <div id="div1" onclick="func1()">클릭</div>    
+</body>
+</html>

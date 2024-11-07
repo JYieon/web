@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let flag = 0;
+        function change(){
+            let btn = document.getElementById("btn")
+            let div = document.getElementById("div1")
+            // btn.innerHTML = "되돌리기"
+            let color = ( flag == 0 )?"back":""
+            let btnMsg = ( flag == 0 )?"되돌리기":"변경"
+            flag = ( flag == 0 )?1:0
+            btn.innerHTML = btnMsg
+            div.className = color
+        }
+    </script>
+    <style>
+        .back {background-color: gold;}
+    </style>
+</head>
+
+<body>
+    <div id="div1">div</div>
+    <button onclick="change()" id="btn">변경</button>
+</body>
+</html>

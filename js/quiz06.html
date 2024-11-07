@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btn(){
+            let txt1 = document.getElementById("txt1")
+            let txt2 = document.getElementById("txt2")
+            let div = document.getElementById("div1")
+            if(txt1.value == txt2.value){
+                div.innerHTML = "일치합니다!!!"
+            } else{
+                div.innerHTML = "다시 입력!!!"
+                div.style.color = "red"
+                txt1.value = ""
+                txt2.value = ""
+                txt1.focus()
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <input id="txt1" type="text" placeholder="비밀번호 입력"><br>
+    <input id="txt2" type="text" placeholder="비밀번호 확인">
+    <div id="div1"></div>
+    <button onclick="btn()">클릭</button>
+</body>
+</html>

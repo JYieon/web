@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let id, name, pwd, pwd2, msg, div
+        function check(){
+            let saveId = "javascript"
+            id = document.getElementById("id")
+            msg = ""
+
+            if(id.value == saveId){
+                msg = "존재하는 아이디입니다"
+            } else if(id.value.length <= 3){
+                msg = "아이디 길이가 짧습니다(4자 이상)"
+            } else {
+                msg = "가입 가능한 아이디입니다"
+            }
+            document.getElementById("msg").innerHTML = msg
+        }
+
+        function check2(){
+            pwd = document.getElementById("pwd")
+            pwd2 = document.getElementById("pwd2")
+
+            if(pwd.value == pwd2.value){
+                msg = "비밀번호 일치합니다"
+            }else{
+                msg = "비밀번호 일치하지 않습니다"
+            }
+            document.getElementById("msg").innerHTML = msg
+
+        }
+
+        function print(){
+            id = document.getElementById("id")
+            name = document.getElementById("name")
+            pwd = document.getElementById("pwd")
+            pwd2 = document.getElementById("pwd2")
+
+            if(!id.value){
+                id.focus()
+                msg = "id 필수 항복"
+            }else if(!pwd.value){
+                pwd.focus()
+                msg = "pwd 필수 항목"
+            }else if(!pwd2.value){
+                pwd2.focus()
+                msg = "pwd_check 필수 항목"
+            }else if(!name.value){
+                name.focus()
+                msg = "name 필수 항목"
+            }else{
+                msg = `<h3>입력데이터</h3>
+                    id : <b>${id.value}</b><br>
+                    pwd : <b>${pwd.value}</b><br>
+                    pwd_check : <b>${pwd2.value}</b><br>
+                    name : <b>${name.value}</b>`
+            }
+            
+            document.getElementById("msg").innerHTML = msg
+            
+        }
+    </script>
+</head>
+<body>
+    <input id="id" type="text" placeholder="input id" oninput="check()"><br>
+    <input id="pwd" type="text" placeholder="input password"><br>
+    <input id="pwd2" type="text" placeholder="password check" onchange="check2()"><br>
+    <input id="name" type="text" placeholder="input name">
+    <div id="msg"></div>
+    <button onclick="print()">가입</button>
+</body>
+</html>

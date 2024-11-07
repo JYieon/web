@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function click02(){
+            const userId = prompt("아이디 입력")
+            const userPwd = prompt("비밀번호 입력")
+            let msg
+            if(userId === "aaa" ){
+                if(userPwd == '111'){
+                    msg = "인증 통과!!"
+                }else{
+                   msg = "비밀번호 틀림"
+                }
+            }else{
+                msg = "아이디 없음!!"
+            }
+            document.getElementById("msg").innerHTML = msg
+        }
+        function click01(){
+            const userId = prompt("아이디 입력")
+            const userPwd = prompt("비밀번호 입력")
+            let msg
+            if(userId === "aaa" && userPwd == '111'){
+                msg = "인증 통과!!"
+            }else{
+                msg = "인증 실패!!"
+            }
+            document.getElementById("msg").innerHTML = msg
+        }
+        function input(){
+            console.log("내용 변경!!!")
+        }
+        function change(){
+            console.log("포커스 이동")
+            let msg = "안녕"
+            console.log("length : " + msg.length)
+        }
+    </script>
+</head>
+<body>
+    <input type="text" oninput="input()"><br>
+    <input type="text" onchange="change()"><br>
+    <input type="text"><br>
+    <hr>
+    <div id="msg"></div>
+    <button onclick="click01()">if else</button>
+    <button onclick="click02()">중첩 if</button>
+</body>
+</html>
