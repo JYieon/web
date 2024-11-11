@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const over = (div) => {
+            div.innerHTML = "마우스 over"
+        }
+
+        const out = (div) => {
+            div.innerHTML = "마우스 out"
+        }      
+        
+        window.onload = () => {
+            // alert("실행 확인")
+            div1 = document.getElementById("div1")
+            div1.addEventListener("mouseup", up)
+            div1.addEventListener("mousedown", down)
+        }
+        const up = () => {
+            // alert("up")
+            div1.innerHTML = "UP"
+            div1.removeAttribute("style")
+        }
+        const down = () => {
+            // alter("down")
+            div1.innerHTML = "DOWN"
+            div1.setAttribute("style", "color:red")
+            div1.style.background = "gold"
+            div1.style.textAlign = "center"
+        }
+        //onload는 무조건 하나만 실행
+    </script>
+</head>
+<body>
+    <div id="div1">div</div>
+    <div onmouseover="over(this)" onmouseout="out(this)">OVER</div>
+</body>
+</html>

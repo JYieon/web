@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let dic1 = {'key1':100, 'key2':200}
+        console.log(dic1)
+        dic1['키'] = '값지정'
+        console.log(dic1)
+        console.log(dic1['key']) //dic1.key2
+
+        let userInfo = [
+            {'id' : 'aaa', name : '홍길동', age : 20},
+            {'id' : 'aaa2', name : '홍길동2', age : 30},
+            {'id' : 'aaa3', name : '홍길동3', age : 40}
+        ]
+
+        window.onload = () =>{
+            document.getElementsByClassName("test")
+            const div = document.querySelector(".test")
+            // let msg = `아이디 : ${userInfo[0].id}<br>
+            //             이름 : ${userInfo[0].name}<br>
+            //             나이 : ${userInfo[0].age}<br>`
+            let msg = ""
+            // for(let i = 0; i < userInfo.length; i++){
+            //     msg += `아이디 : ${userInfo[i].id}<br>
+            //              이름 : ${userInfo[i].name}<br>
+            //              나이 : ${userInfo[i].age}<hr>`
+            // }
+            // userInfo.forEach((data) => {
+            //     msg += `아이디 : ${data.id}<br>
+            //               이름 : ${data.name}<br>
+            //               나이 : ${data.age}<hr>`
+            // })
+            for(let user of userInfo){
+                msg += `아이디 : ${user.id}<br>
+                          이름 : ${user.name}<br>
+                          나이 : ${user.age}<hr>`
+            }
+            div.innerHTML = msg
+        }
+    </script>
+</head>
+<body>
+    <div class="test"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const trFunc = (tr) =>{
+            tr.style.background = "gold";
+        }
+    </script>
+    <style>
+        tbody tr:hover{
+            cursor: pointer;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>아이디</th><th>이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="1" onclick="trFunc(this)"><td>1 aaa</td><td>1 홍길동</td></tr>
+            <tr id="2" onclick="trFunc(this)"><td>2 aaa</td><td>2 홍길동</td></tr>
+            <tr id="3" onclick="trFunc(this)"><td>3 aaa</td><td>3 홍길동</td></tr>
+            <tr id="4" onclick="trFunc(this)"><td>4 aaa</td><td>4 홍길동</td></tr>
+            <tr id="5" onclick="trFunc(this)"><td>5 aaa</td><td>5 홍길동</td></tr>
+            <tr id="6" onclick="trFunc(this)"><td>6 aaa</td><td>6 홍길동</td></tr>
+            <tr id="7" onclick="trFunc(this)"><td>7 aaa</td><td>7 홍길동</td></tr>    
+        </tbody>
+    </table>
+</body>
+</html>

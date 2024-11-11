@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumFunc(a1, a2){
+            console.log(`a1 : ${a1}, as : ${a2}`)
+            return a1 + a2;
+        }
+        let n1 = 10
+        let n2 = 20
+        sumFunc(n1, n2)
+        console.log("sum : " + sum)
+
+        function testFun01(){
+            let arr = [1234, "안녕하세요"]
+            return arr
+        }
+        const result = testFunc01();
+        console.log("result : ", result)
+        console.log("result[0] : ", result[0])
+
+        function testFunc02(x,y){
+            console.log("test02 실행 : ", x, y)
+        }
+        testFunc02() //undefined
+        testFunc02(1) //1 undefined
+        testFunc02(100, 200)
+        testFunc02(100, 200, 300) //100, 200
+        // 매개변수의 갯수는 신경 안씀. 호출되면 실행됨
+        
+        function testFunc03(){
+            console.log("test03 실행 : ", arguments)
+            // arguments : 매개변수를 배열형식으로 받아옴
+            for(let i = 0; i < arguments.length; i++){
+                console.log(arguments[i])
+            }
+        }
+        testFunc03(100, 200, 300)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

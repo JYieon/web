@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { cursor: pointer;}
+    </style>
+    <script>
+        window.onload = () => {
+            const wrap = document.getElementById("wrap")
+            let div = "";
+            for(let i = 1; i <= 10 ; i++){
+                div += `<div
+                    onmouseover="over(this)" onmouseout="out(this)"
+                id="${i}">${i}.div</div>`
+            }
+            wrap.innerHTML = div
+        }
+        const over = (div) => {
+            const id = div.id
+            for(let i = id ; i<=10 ; i++){
+                if( i % id == 0 ){
+                    document.getElementById( i ).style.color="red"
+                    document.getElementById( i ).style.fontSize="20px"
+                }
+            }
+        }
+        const out = (div) => {
+            for(let i=1 ; i<=10 ; i++)
+                document.getElementById( i ).removeAttribute("style")
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <div id="wrap"></div>
+    </body>
+</body>
+</html>

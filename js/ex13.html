@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){
+
+        }
+
+        let sumFunc = function(){
+            // alert("함수 실행")
+            console.log("함수 실행")
+        }
+        sumFunc()
+
+        let sumFunc02 = () => {
+            console.log("화살표 함수")
+            console.log("여러줄 표현")
+            return 12345
+        }
+        const res = sumFunc02()
+        console.log("result : ", res)
+
+        const test01 = () => { 10 + 20 } 
+        const test02 = () => 10 + 20
+        const test03 = () => ( 10 + 20 )
+        // 중괄호가 없거나 ()는 연산된 값을 바로 리턴해준다
+        console.log("test01 : ", test01()) //undefined
+        console.log("test02 : ", test02())
+        console.log("test03 : ", test03())
+
+        const test04 = (val) => {
+            if(val > 10){
+                return "10보다 크다"
+            }else {
+                return "10보다 작다"
+            }
+        }
+        console.log( test04(100) )
+
+        const test05 = (val) => (val > 10)?"참":"거짓" 
+        console.log( test05(100) )
+        
+        //this라는 이름으로 변수를 받는 건 안됨
+        const divFunc = (div) => {
+            console.log(div)
+            div.style.color = "red"
+        }
+    </script>
+    <style>
+        #div1 {cursor: pointer}
+    </style>
+</head>
+<body>
+    <div id="div1" onclick="divFunc(this)">안녕하세요</div>
+    <!-- this : 태그 자기 자신 -->
+</body>
+</html>

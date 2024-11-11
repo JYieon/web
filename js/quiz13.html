@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table tr > td:nth-of-type(2):hover{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let userInfo = [ 
+            { 'id' : 'aaa', 'name' : '홍길동', 'age' : 20 }, 
+            { 'id' : 'bbb', 'name' : '김개똥', 'age' : 30 }, 
+            { 'id' : 'ccc', 'name' : '고길동', 'age' : 40 } 
+        ];
+
+        function allUser() { 
+            let tag = "" 
+            tag = `<table border="1"><tr><th>아이디</th><th>이름</th><th>나이</t></tr>`
+            userInfo.forEach( (data) => {
+                tag += `<tr><td>${data.id}</td><td onclick="info('${data.id}')">${data.name}</td><td>${data.age}</td></tr>`
+            })
+            tag += "</table>"
+            document.getElementById("table").innerHTML = tag
+        }
+
+        function info(id){
+            let tag = ""
+            userInfo.forEach( (data) => {
+                if(data.id == id){
+                    tag += `<b>아이디 : </b>${data.id}<br><b>이름 : </b>${data.name}<br><b>나이 : </b>${data.age}`
+                }
+            })
+            document.getElementById("table").innerHTML = tag
+        }
+
+        function searchUser(){
+            const u_id = document.getElementById("search")
+            let tag = "" 
+            tag = `<table border="1"><tr><th>아이디</th><th>이름</th><th>나이</t></tr>`
+            userInfo.forEach( (data) => {
+                if(data.id == u_id.value){
+                    tag += `<tr><td>${data.id}</td><td>${data.name}</td><td>${data.age}</td></tr>`
+                }
+            })
+            tag += "</table>"
+            document.getElementById("table").innerHTML = tag
+        }
+
+        function deleteUser(){
+            const u_id = document.getElementById("delete")
+            userInfo = userInfo.filter( (value, index) => {
+                if(u_id.value !== value.id){
+                    return userInfo[index]
+                }
+            })
+            allUser()
+        }
+    </script>
+</head>
+<body>
+    <div id="table">목록을 보여줍니다</div>
+    <hr>
+    <button onclick="allUser()">모든 회원 보기</button>
+    <hr>
+    <input id="search" type="text" placeholder="input id"><br>
+    <button onclick="searchUser()">특정 회원 조회</button>
+    <hr>
+    <input id="delete" type="text" placeholder="input id"><br>
+    <button onclick="deleteUser()">특정 회원 삭제</button>
+    
+</body>
+</html>
