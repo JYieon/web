@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const test = () => {
+            console.log("test")
+        }
+        window.onload = () => {
+            console.log("처음 실행")
+            setTimeout(test, 2000) //2초 후에 실행됨
+            console.log("2초 대기")
+        }
+
+        let e
+        const digClock = () => {
+            let today = new Date()
+            let time = today.getMonth() + 1 + "월"
+            time += today.getDate() + "일"
+            time += today.getHours() + "시"
+            time += today.getMinutes() + "분"
+            time += today.getSeconds() + "초"
+            document.getElementById("clock").innerHTML = time
+            e = setTimeout(digClock, 1000) // 자기자신을 특정 시간마다 호출
+        }
+        const end = () => {
+            clearTimeout(e) //함수종료
+        }
+
+        let e2
+        const start = () => {
+            e2 = setInterval(myTimer, 1000) // 특정 함수를 특정 시간마다 호출
+        }
+        const myTimer = () => {
+            let d = new Date()
+            document.getElementById("clock").innerHTML = d.toLocaleString()
+        }
+        const stop = () => {
+            clearInterval(e2)
+        }
+    </script>
+</head>
+<body>
+    <div id="clock"></div>
+    <button onclick="digClock()">시작</button>
+    <button onclick="end()">종료</button>
+    <hr>
+    <button onclick="start()">시작</button>
+    <button onclick="stop()">종료</button>
+
+</body>
+</html>

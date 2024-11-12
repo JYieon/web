@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let list = ["고심이01", "고심이02", "고심이03", "고심이04", "고심이05"]
+        let i = 0
+        let f
+        const imgList = () => {
+            let div = document.getElementById("img")
+            div.innerHTML = `<img src = "../resources/images/${list[i]}.jfif">`
+            if(i == 4){
+                i = 0
+            }else{
+                i++
+            }
+        }
+        const start = () => {
+            f = setInterval(imgList, 1000)
+        }
+        const stop = () => {
+            clearInterval(f)
+        }
+    </script>
+</head>
+<body onload="start()">
+    <div id="img" onmouseover="stop()" onmouseout="start()"></div>
+</body>
+</html>

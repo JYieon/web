@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cnt = 0;
+        const add = (img) => {
+            if(cnt == 0){
+                let title = document.getElementById("list_title")
+                title.innerHTML = "최근 구경한 상품"
+                title.style.background = "green"
+            }else if(cnt >= 5){
+                document.getElementById("list"+(cnt-4)).remove()
+            }
+            cnt++
+            let div = document.getElementById("list")
+            let pic = document.createElement("img")
+            pic.setAttribute("src", "../resources/images/고심이0"+img.id+".jfif")
+            pic.setAttribute("width", "100px")
+            pic.id = "list" + cnt
+            div.appendChild(pic)
+            
+        }
+    </script>
+    <style>
+        img {
+            width: 100px;
+            height: 100px
+        }
+
+        #list{
+            position: fixed; right: 30px;
+            top: 10px; width: 100px;
+        }
+
+        #list div{
+            background-color: red;
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td><img id="1" src="../resources/images/고심이01.jfif" onclick="add(this)"></td>
+            <td><img id="2" src="../resources/images/고심이02.jfif" onclick="add(this)"></td>
+            <td><img id="3" src="../resources/images/고심이03.jfif" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><img id="4" src="../resources/images/고심이04.jfif" onclick="add(this)"></td>
+            <td><img id="5" src="../resources/images/고심이05.jfif" onclick="add(this)"></td>
+            <td><img id="6" src="../resources/images/고심이06.jfif" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><img id="7" src="../resources/images/고심이07.jfif" onclick="add(this)"></td>
+            <td><img id="8" src="../resources/images/고심이08.jfif" onclick="add(this)"></td>
+            <td><img id="9" src="../resources/images/고심이09.jfif" onclick="add(this)"></td>
+        </tr>
+    </table>
+
+    <div id="list">
+        <div id="list_title">목록이<br>없습니다</div>
+    </div>
+</body>
+</html>

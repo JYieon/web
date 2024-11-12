@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let list = [1,2,3]
+            let dic = {id : "aaa", name : "홍길동"}
+            console.log("변경 전 list : ", list)
+            console.log("변경 전 dic : ", dic)
+
+            // let list02 = list //list의 값도 같이 변경됨 : 얕은 복사
+            // let list02 = [list[0], list[1], list[2]] //깊은복사. 새로운 데이터 생성
+            
+            // let list02 = [] // 깊은복사하는법2
+            // list.forEach((v)=>{list02.push(v)})
+            let list02 = [...list, 11111] //깊은복사하는법3. 보통 이렇게 사용. 데이터추가도 함께 할 수 있음
+            let dic02 = {...dic}
+
+            list02.push("새로운 값")
+            console.log("변경 후 list : ", list)
+            console.log("list02 : ", list02)
+        }
+
+        const btn = () => {
+            const div = document.getElementById("div")
+            // const img = div.firstElementChild
+            const img = div.firstElementChild.cloneNode(true) //첫번째 자식을 깊은 복사(새롭게 추가)하겠다
+            img.src = "../resources/images/고심이02.jfif"
+            div.lastElementChild.appendChild(img) //기존에 있던 img가 달라짐. 얕은복사
+            console.log(div.querySelector("div"))
+        }
+    </script>
+    <style>
+        #div div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            background-color: gold;
+        }
+        img {width: 50px; height: 50px;}
+    </style>
+</head>
+<body>
+    <div id="div">
+        <img src="../resources/images/고심이01.jfif">
+        <div></div>
+    </div>
+    <button onclick="btn()">클릭</button>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            name : "홍길동",
+            age : "20",
+            test : () => {
+                console.log("이름 : ", user.name)
+                console.log("나이 : ", user.age)
+                console.log("주소 : ", user.addr)
+            },
+            change : (age, name) => {
+                user.name = name
+                user.age = age
+            }
+        }
+        const printFunc = () => {
+            user.addr = "산골짜기"
+            consoleo.log("user: ", user)
+            user.test()
+            user.change("1111", "2222")
+            console.log(user)
+        }
+    </script>
+    <script src="ex23.html"></script>
+    <script>
+        function t01(){
+            test01()
+            test02()
+
+            obj.t01()
+            console.log(obj.name)
+            obj.addr = "추가"
+            console.log(obj)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="printFunc()">클릭</button>
+    <button onclick="t01()">t01클릭</button>
+</body>
+</html>

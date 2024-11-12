@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let list = ["고심이01", "고심이02", "고심이03", "고심이04", "고심이05"]
+        let i = 0
+        let f
+
+        window.onload = auto = () => {
+            document.getElementById("pic").src = `../resources/images/${list[i]}.jfif`
+            document.getElementById(i).checked = true
+            
+            if(i == 4){
+                i = 0
+            }else{
+                i++
+            }
+
+            f = setTimeout(auto, 1000)
+        }
+
+        const show = (rdi) => {
+            clearTimeout(f)
+            let num = rdi.id
+            num++
+            document.getElementById("pic").src = `../resources/images/${list[i]}.jfif`
+            i = num
+        }
+
+    </script>
+    <style>
+        #pic { width: 200px; height: 200px;}
+        #wrap { width: 330px; text-align: center;}
+
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+        <img id="pic">
+        <hr>
+        <input type="radio" id="0" name="pic" onclick="show(this)">
+        <input type="radio" id="1" name="pic" onclick="show(this)">
+        <input type="radio" id="2" name="pic" onclick="show(this)">
+        <input type="radio" id="3" name="pic" onclick="show(this)">
+        <input type="radio" id="4" name="pic" onclick="show(this)">
+    </div>
+    
+</body>
+</html>

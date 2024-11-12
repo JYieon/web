@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cnt = 0
+        const inner = () => {
+            cnt++
+            let msg = `내용 : ${cnt}`
+            let txt = document.getElementById("txt")
+            // txt.innerHTML = msg
+            // txt.insertAdjacentHTML("afterbegin", msg)
+            txt.insertAdjacentHTML("beforeend", msg)
+        }
+        let img
+        const add = () => {
+            let txt = document.getElementById("txt")
+            img = document.createElement("img") //태그를 만들어준다
+            img.setAttribute("src", "../resources/images/고심이01.jfif")
+            img.setAttribute("width", "100")
+            img.setAttribute("style", "height:100px; border:1px solid")
+            img.id = "aaaa"
+            
+            console.log(img)
+            txt.appendChild(img)
+        }
+        const addTB = () => {
+            let data = [{id:"aaa", name:"홍길동"},{id:"bbb", name:"김개똥"}]
+            let table = document.createElement("table")
+            table.border = 1
+            data.forEach((item) => {
+                var tr = document.createElement("tr")
+                var td1 = document.createElement("td")
+                td1.innerHTML = item.id
+                tr.appendChild(td1)
+
+                var td2 = document.createElement("td")
+                td2.innerHTML = item.name
+                tr.appendChild(td2)
+                table.appendChild(tr)
+
+                table.appendChild(tr)
+            })
+            txt.appendChild(table)
+        }
+        const remove = () => {
+            let txt = document.getElementById("txt")
+            console.log(txt.childNodes)
+            // txt.remove()
+            txt.removeChild(txt.childNodes[txt.childNodes.length - 1])
+        }
+    </script>
+</head>
+<body>
+    <div id="txt">안녕하세요</div>    
+    <button onclick="inner()">클릭</button>
+    <button onclick="add()">add 클릭</button>
+    <button onclick="addTB()">table 클릭</button>
+    <button onclick="remove()">table remove</button>
+</body>
+</html>
