@@ -1,0 +1,36 @@
+<!-- jquery -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery 사용하는 두가지 방법 -->
+    <!-- <script src="../jquery-3.7.1.min.js"></script> 다운로드해서 사용  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- 인터넷 경로로 사용 -->
+    <script>
+        // $(document).ready(function(){ 
+        // $().ready(function(){
+        // $(function(){
+        $(()=>{
+            $(".hide").click(function(){
+                $("p").hide()
+            })
+            $("#show").click(() => {$("p").show()})
+            $("b").mousedown(()=>{
+                $("p").hide()
+            })
+            $("b").mouseup(()=>{
+                $("p").show()
+            })
+        }) 
+    </script>
+</head>
+<body>
+    <b>연습중</b>
+    <br>
+    <p>이벤트 처리</p>
+    <button class="hide">숨기기</button>
+    <button id="show">보이기</button>
+</body>
+</html>
