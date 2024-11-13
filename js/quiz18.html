@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 300px;
+        }
+        #button{
+            margin-left: 40%;
+        }
+        #nemo.a{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: fixed; left: 40%; top: 5%;
+        }
+        #nemo.b{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: fixed; left: 40%; top: 5%;
+        }
+    </style>
+    <script>
+        let bool = true
+        let e
+        function view(i){
+            clearTimeout(e)
+            let div = document.getElementById("nemo")
+            if(i.id == "btn1"){
+                div.setAttribute("class", "a")
+            }else if(i.id == "btn2"){
+                div.setAttribute("class", "b")
+            }else if(i.id == "auto"){
+                autoBox(div)
+            }else if(i.id == "remove"){
+                div.removeAttribute("class")
+            }
+        }
+
+        const autoBox = (div) => {
+            if(bool){
+                div.setAttribute("class", "a")
+            }else{
+                div.setAttribute("class", "b")
+            }
+            bool = !bool
+            e = setTimeout(() => autoBox(div), 500)
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="nemo"></div>
+    </div>
+    <hr>
+    <div id="button">
+        <button id="btn1" onclick="view(this)">버튼 1</button>
+        <button id="btn2" onclick="view(this)">버튼 2</button> 
+        <button id="auto" onclick="view(this)">자동</button> 
+        <button id="remove" onclick="view(this)">지우기</button> 
+    </div>
+</body>
+</html>

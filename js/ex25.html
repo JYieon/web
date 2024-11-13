@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const test = () => {    
+            alert("호출")
+            let txt = document.getElementById("txt")
+            let fo = document.getElementById("fo")
+            console.log(fo)
+            console.log(fo.txt)
+            console.log(fo.name)
+            if(txt.value != ""){
+                alert("성공")
+                fo.submit() 
+            }else{
+                alert("데이터 입력")
+            }
+        }
+        const test2 = () => {
+            location.href = "ex01.html"
+        }
+        window.onload = () => {
+            const t1 = document.getElementById("target01")
+            const t2 = document.getElementById("target02")
+            t1.addEventListener("click", btn)
+            t2.addEventListener("click", btn)
+        }
+        const btn = (event) => {
+            switch(event.target.id){
+                case "target01": alert("t01 클릭");break;
+                case "target02": alert("t02 클릭");break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="target01" value="t01">
+    <input type="button" id="target02" value="t02">
+    <hr>
+    <button type="button" onclick="location.href = 'ex01.html'">이동</button>
+    <button type="button" onclick="test2()">이동</button>
+    <hr>
+    <form id="fo" action="ex01.html">
+        <input type="text" id="txt"><br>
+        <input type="text" name="name" class="class01"><br>
+        <input type="button" onclick="test()" value="전송">
+    </form>
+</body>
+</html>

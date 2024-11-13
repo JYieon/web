@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td img { width: 100px; height: 100px;}
+        #modal {
+            display: none; 
+            position: absolute; top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        #food {
+            position: absolute;
+            top : 100px; left: calc(50% - 200px);
+            width: 400px; height: 500px; 
+            border: 1px solid; 
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+    </style>
+    <script type="text/javascript">
+        let item = {
+            images : ["../resources/images/맛집01.jpg", "../resources/images/맛집02.jpg","../resources/images/맛집03.jpg"],
+            message : ["1. 상품 내용","2.상품 내용","3.상품 내용"]
+        }
+
+        window.onload = () => {
+            for(let i=0 ; i<3 ; i++){
+                let id = document.getElementById(i);
+                id.addEventListener("click",views)
+            }
+        }
+        
+        const views = ( event ) => {
+            document.getElementById("modal").style.display = "block"
+            console.log(event)
+            const food = document.getElementById("food")
+            const img = document.createElement("img")
+            img.src = item.images[ event.target.id ] 
+            img.style.width = "100%"
+            img.style.height = "200px"
+            food.appendChild(img)
+
+            const msg = document.createElement("h3")
+            msg.style.textAlign = "center";
+            msg.innerHTML = item.message[event.target.id]
+            food.appendChild(msg)
+
+            const closeBtn = document.createElement("button")
+            closeBtn.innerHTML = "창 닫기"
+            closeBtn.addEventListener("click", closeFunc)
+            food.appendChild(closeBtn)
+        }
+
+        const closeFunc = () => {
+            document.getElementById("modal").style.display = "none";
+            const food = document.getElementById("food")
+            food.innerHTML = ""; //비우지 않으면 누적된다
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <thead><tr><th colspan="3"> - 상품 목록 - </th></tr></thead>
+        <tbody>
+            <tr>
+                <td><img id="0" src="../resources/images/맛집01.jpg"></td>
+                <td><img id="1" src="../resources/images/맛집02.jpg"></td>
+                <td><img id="2" src="../resources/images/맛집03.jpg"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="modal">
+        <div id="food"></div>
+    </div>
+</body>
+</html>
+

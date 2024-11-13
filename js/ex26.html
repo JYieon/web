@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #remove { display: none;}
+        #remove.a { display: block; background-color: green;}
+    </style>
+    <script>
+        const test = (i) => {
+            console.log(i)
+            console.log(i.id)
+            console.log(i.value)
+            let div = document.getElementById("remove")
+            switch(i.id){
+                case "show" : 
+                    div.setAttribute("class", "a")
+                    break
+                case "hidd" : 
+                    div.removeAttribute("class")
+                    break
+            }
+        }
+        function block(){
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="보이기" onclick="test(this)" id="show"></inpt>
+    <div id="remove">
+        <h3>안녕하세요</h3>
+        <input type="button" value="숨기기" onclick="test(this)" id="hidd">
+    </div>
+</body>
+</html>

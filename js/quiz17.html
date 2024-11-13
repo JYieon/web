@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 300px;
+        }
+        #button{
+            margin-left: 45%;
+        }
+        #nemo.a{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: fixed; left: 40%; top: 5%;
+        }
+    </style>
+    <script>
+        function view(i){
+            let div = document.getElementById("nemo")
+            if(i.id == "show"){
+                div.setAttribute("class", "a")
+            }else if(i.id == "remove"){
+                div.removeAttribute("class")
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="nemo"></div>
+    </div>
+    <hr>
+    <div id="button">
+        <button id="show" onclick="view(this)">버튼 1</button>
+        <button id="remove" onclick="view(this)">지우기</button> 
+    </div>
+</body>
+</html>
