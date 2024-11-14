@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>단순 for으로 출력</h3>
+    <% for(let i=0 ; i < context["rank"].length ; i++){ %>
+        <%= context["rank"][i] %><br>
+    <% } %>
+    <hr>
+    <h3>이중 for으로 출력</h3>
+    <table border="1">
+    <% for(let i=0 ; i < context["rank"].length ; i++){ %>
+        <tr>
+        <% for(let j=0; j < context["rank"][i].length; j++){ %>
+            <td><%= context["rank"][i][j] %></td>        
+        <% } %>
+        </tr>
+    <% } %>
+    </table>
+</body>
+</html>

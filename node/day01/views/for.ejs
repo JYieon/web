@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+</head>
+<body>
+    <%= "안녕" %>
+    <% const name = "홍길동" %><br>
+    name : <%= name %>
+    <hr>
+    <ul>
+    <% for(let i=0; i<arr.length; i++){ %>
+        <li><%= i + ". " + arr[i] %></li>
+    <% } %>
+    </ul>
+</body>
+</html>
