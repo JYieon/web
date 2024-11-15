@@ -24,4 +24,4 @@ app.listen(3000,() => {
 //npx supervisor main 명령어로 실행
 //그럼 실시간 수정사항이 바로 적용된다
 
-//npm i express -save 
+//npm i express --save 
