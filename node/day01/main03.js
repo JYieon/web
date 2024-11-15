@@ -41,7 +41,7 @@ app.get("/for_quiz", (req, res)=>{
             [11, 12, 13, 14, 15]
         ]
       }
-    res.render("for_quiz", {context})
+    res.render("for_quiz", context)
 })
 app.listen(3000, ()=>console.log("3000 server"))
 
