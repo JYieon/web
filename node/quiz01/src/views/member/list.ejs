@@ -10,10 +10,10 @@
         <tr>
             <th>아이디</th><th>이름</th><th>주소</th>
         </tr>
-        <% for(let i = 0; i<list.length; i++) { %>
+        <% for(let i = 0; i<mem.length; i++) { %>
             <tr>
                 <td><%= mem[i]["id"] %></td>
-                <td><a href="/member/info?id=<%= list[i]['id'] %>"><%= mem[i].name %></a></td>
+                <td><a href="/member/info?id=<%= mem[i]['id'] %>"><%= mem[i].name %></a></td>
                 <td><%= mem[i]["addr"] %></td>
             </tr>
         <% } %>

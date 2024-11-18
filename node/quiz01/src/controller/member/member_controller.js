@@ -5,7 +5,7 @@ const login = (req, res) => {
 }
 
 const loginCheck = (req, res) => {
-    const result = service.loginCheck( req.query.id, req.query.name);
+    const result = service.loginCheck(req.query.id, req.query.name);
     if(result == 0 )
         res.redirect("/member/list")
     res.redirect("/member/login" )
