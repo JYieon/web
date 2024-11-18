@@ -1,0 +1,14 @@
+ 라이브러리 설치
+ npm i express --save
+ npm i cookie-parser --save
+ npm i ejs --save
+ npm i supervisor --save
+ 
+
+
+ cookie 
+ -사용자가 관리 => 보안에 취약
+ seesion
+ -서버가 관리
+
+ => 변수처럼 정보를 저장하기 위한 값
