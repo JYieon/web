@@ -1,4 +1,4 @@
-const config = require("../../../config/cookie_session/config")
+const config = require("../../config")
 const ser = require("../../service/cookie/cookie_service")
 
 const index = (req,res) => {
