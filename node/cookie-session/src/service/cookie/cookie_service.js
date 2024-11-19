@@ -1,4 +1,4 @@
-const cart = require("../../db/user_cart")
+const cart = require("../../db/cookie/user_cart")
 const getCart = () => {
     return cart
 }
