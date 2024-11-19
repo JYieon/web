@@ -1,3 +1,12 @@
-<h3>상품 목록</h3>
-list : <% console.log(list) %> <br>
+<table border="1">
+    <tr>
+        <th>goods_id</th><th>title</th><th>price</th><th>number</th><th>total</th>
+    </tr>
+    <% for(let i=0; i<list.length; i++) { %>
+        <tr>
+            <td><%= list[i].goods_id %></td><td><%= list[i].title %></td>
+            <td><%= list[i].price %>원</td><td><%= list[i].number %>개</td><td><%= list[i].total %>원</td>
+        </tr>
+    <% } %>
+</table>
 <a href="/cookie/cart">목록 이동</a>

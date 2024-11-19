@@ -1,6 +1,6 @@
 const cookieConfig = {
     httpOnly : true,
-    maxAge : 5000, // 쿠키를 5초동안만 유지
+    maxAge : 10000, // 쿠키를 10초동안만 유지
     signed : true // 암호화
 }
 

@@ -27,7 +27,7 @@ const save = (req, res) => {
 
     let cart_list = req.signedCookies.cart_list
     if(cart_list === undefined){
-        cart_list = {}
+        cart_list = {} //초기화
     }
     cart_list = ser.save(cart_list, goods_id)
     res.cookie("cart_list", cart_list, config.cookieConfig)
@@ -49,7 +49,7 @@ const viewList = (req, res) => {
         </script>`
         res.send(msg)
     }
-    res.render("cookie/view_list", {list : cart_list})
+    res.render("cookie/view_list", {list : ser.view_list( cart_list )})
 }
 
 module.exports = { viewList, cart, index, popup, makeCookie, save }
