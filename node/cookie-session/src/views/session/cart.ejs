@@ -1,0 +1,17 @@
+<%= console.log(Object.keys(list).length) %>
+<table border="1">
+    <tr>
+        <th>goods_id</th><th>title</th><th>price</th><th>number</th><th>total</th>
+    </tr>
+    <% for(let i=0; i<Object.keys(list).length; i++){ %>
+        <% let id = Object.keys(list)[i] %>
+        <% let total = (id * item[i].price) %>
+        <tr>
+            <td><%= id %></td>
+            <td><%= item[i].title %></td>
+            <td><%= item[i].price %></td>
+            <td><%= list[id] %></td>
+            <td><%= total %></td>
+        </tr>
+    <% } %>
+</table>

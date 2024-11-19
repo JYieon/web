@@ -1,0 +1,9 @@
+<ul>
+    <li>상품목록</li>
+    <% console.log(data) %>
+    <% data.forEach(item => { %>
+        <li> <a href="/session/save/<%= item.goods_id %>"><%= item.title %></a> : <%= item.price %>원</li>
+    <% }) %>
+</ul>
+<a href="/session/cart">저장 목록 확인</a>
+<a href="/session/login">로그인 성공페이지 이동</a>

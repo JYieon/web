@@ -3,8 +3,9 @@
  npm i cookie-parser --save
  npm i ejs --save
  npm i supervisor --save
- 
 
+post방식에서 값을 가져오기 위해 설치 
+npm install body-parser --save
 
  cookie 
  -사용자가 관리 => 보안에 취약
