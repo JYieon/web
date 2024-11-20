@@ -4,6 +4,10 @@ const getList = () => {
     return list.cart
 }
 
+const getUser = () => {
+    return list.user
+}
+
 const save = (cart_list, goods_id) =>{
     if( !cart_list[goods_id] ){
         cart_list[goods_id] = 0;
@@ -12,4 +16,4 @@ const save = (cart_list, goods_id) =>{
     return cart_list;
 }
 
-module.exports = {getList, save}
+module.exports = {getList, save, getUser}

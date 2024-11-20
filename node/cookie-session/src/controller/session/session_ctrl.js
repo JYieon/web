@@ -37,20 +37,38 @@ const loginCheck = (req, res) => {
     console.log(req.query.pwd)
     console.log(req.body) //post방식에선 query사용x
     const dbId = "aaa", dbPwd = "111", dbName = "홍길동"
-    let msg = "<script>"
-    if(req.body.id === dbId){
-        if(req.body.pwd === dbPwd){
-           req.session.username = dbId
-           req.session.name = dbName
-           return res.redirect("/session/main") 
+    let msg = ""
+    const user = ser.getUser()
+    user.forEach((data) => {
+        if(req.body.id === data.id){
+            if(req.body.pwd === data.pwd){
+               req.session.username = data.id
+               req.session.name = data.nick
+               return res.redirect("/session/main") 
+            }else{
+                msg = `<script>alert("비번틀림");`
+                msg += `location.href="/session/login"; </script>`
+                res.send(msg)
+            }
         }else{
-            msg += `alert("비번틀림");`
+            msg = `<script>alert("존재하지 않는 id");`
+            msg += `location.href="/session/login"; </script>`
+            res.send(msg)
         }
-    }else{
-        msg += `alert("존재하지 않는 id");`
-    }
-    msg += `location.href="/session/login"; </script>`
-    res.send(msg)
+    })
+    // if(req.body.id === dbId){
+    //     if(req.body.pwd === dbPwd){aa
+    //        req.session.username = dbId
+    //        req.session.name = dbName
+    //        return res.redirect("/session/main") 
+    //     }else{
+    //         msg += `alert("비번틀림");`
+    //     }
+    // }else{
+    //     msg += `alert("존재하지 않는 id");`
+    // }
+    // msg += `location.href="/session/login"; </script>`
+    // res.send(msg)
 }
 
 const main = (req, res) => {
