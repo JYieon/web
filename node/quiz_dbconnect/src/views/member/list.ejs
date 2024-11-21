@@ -1,0 +1,16 @@
+<%- include("../default/header") %>
+<hr>
+
+<table border="1">
+    <tr>
+        <th>아이디</th><th>비밀번호</th><th>이름</th><th>회원정보</th>
+    </tr>
+    <% user.forEach(data => { %>
+        <tr>
+            <td><%= data.ID %></td>
+            <td><%= data.PWD %></td>
+            <td><a href="/member/userView?id=<%= data.ID %>"><%= data.NAME %></a></td>
+            <td><%= data.ADDR %></td>
+        </tr>
+    <% }) %>
+</table>

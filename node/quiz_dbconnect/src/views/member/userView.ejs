@@ -1,0 +1,12 @@
+<%- include("../default/header") %>
+<hr>
+
+<h3>- 개인정보 -</h3>
+
+id : <%= user.ID %><br>
+pwd : <%= user.PWD %><br>
+name : <%= user.NAME %><br>
+addr : <%= user.ADDR %><br>
+<a href="/member/modify_form?id=<%= user.ID %>">수정</a>
+<a href="/member/delete?id=<%= user.ID %>">삭제</a>
+<a href="/member/list">목록으로 이동</a>

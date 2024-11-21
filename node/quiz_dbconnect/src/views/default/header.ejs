@@ -1,0 +1,13 @@
+<a href="/">HOME</a>
+
+<script>
+    console.log("아무거나")
+    console.log(document.cookie)
+    if (document.cookie.indexOf("isLogin=true") !== -1) {
+        document.write('<a href="/member/logout">로그아웃</a>');
+    } else {
+        document.write('<a href="/member/login">로그인</a>');
+    }
+</script>
+ 
+<a href="/member/listCheck">회원정보</a>
