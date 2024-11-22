@@ -33,7 +33,9 @@ const addUser = async (body) => {
 }
 
 const getUser = async (mId) => {
-    return await dao.getUser(mId)
+    let user = await dao.getUser(mId)
+    console.log("getUser : ", user)
+    return user
 }
 
 const deleteUser = async (body) => {
@@ -49,8 +51,17 @@ const deleteUser = async (body) => {
     return msg
 }
 
-const modifyUser = async (mId) => {
-    return await dao.modifyUser(mId)
+const modifyUser = async (body) => {
+    let result = await dao.modifyUser(body)
+    let msg = "<script>"
+    if(result == 0){
+        msg += `alert("회원수정 실패");
+            location.href="/member/modify_from?id=`+body.ID+`"</script>`
+    }else {
+        msg += `alert("회원수정 성공");
+            location.href="/member/list"</script>`
+    }
+    return msg
 }
 
 module.exports = {loginCheck, getMember, addUser, getUser, deleteUser, modifyUser}

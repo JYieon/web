@@ -42,16 +42,25 @@ const deleteUser = async (mId) => {
     let con = await oracledb.getConnection(dbConfig)
     let result = 0
     try{
-        result = await con.execute(sql, mId)
-    }catch{
-
+        result = await con.execute(sql)
+    }catch(err){
+        console.log(err)
     }
     con.close()
     return result
 }
 
-const modifyUser = async (mId) => {
-    const sql = `update members set `
+const modifyUser = async (user) => {
+    const sql = `update members set pwd='${user.id}', name='${user.name}', addr='${user.addr}' where id='${user.id}' `
+    let con = await oracledb.getConnection(dbConfig)
+    let result = 0
+    try{
+        result = await con.execute(sql)
+    }catch(err){
+        console.log(err)
+    }
+    con.close()
+    return result
 }
 
 module.exports = {getMember, addUser, getUser, deleteUser, modifyUser}

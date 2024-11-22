@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const ctrl = require("../../controller/member/member_ctrl")
+const ctrl = require("../../controller/member/ctrl")
 
 router.get("/login", ctrl.login)
 router.get("/logout", ctrl.logout)
