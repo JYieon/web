@@ -1,6 +1,6 @@
 const dbConfig = {
-    user : "c##hr",
-    password : "hr",
+    user : "c##choi",
+    password : "test123",
     connectString : "localhost:1521/xe"
 }
 

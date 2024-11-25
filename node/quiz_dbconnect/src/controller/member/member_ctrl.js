@@ -59,9 +59,7 @@ const list = async (req, res) => {
 }
 
 const userView = async (req, res) => {
-    console.log(req.query)
     let user = await ser.getUser(req.query)
-    console.log("ctrl: ",user)
     res.render("member/userView", {user})
 }
 
@@ -70,13 +68,15 @@ const deleteM = async (req, res) => {
     res.send(msg)
 }
 
-const modifyForm = (req, res) => {
-    let user = ser.getUser(req.query)
+const modifyForm = async (req, res) => {
+    let user = await ser.getUser(req.query)
+    console.log(user)
     res.render("member/modify_form", {user})
 }
 
 const modify = async (req, res) => {
-    ser.modifyUser(req.query)
+    let msg = await ser.modifyUser(req.body)
+    res.send(msg)
 }
 
 module.exports = {login, registerForm, loginCheck, listCheck, list, logout, register, userView, deleteM, modify, modifyForm}

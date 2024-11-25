@@ -34,7 +34,6 @@ const addUser = async (body) => {
 
 const getUser = async (mId) => {
     let user = await dao.getUser(mId)
-    console.log("getUser : ", user)
     return user
 }
 

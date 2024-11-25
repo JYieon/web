@@ -37,7 +37,6 @@ const getUser = async (mId) => {
 }
 
 const deleteUser = async (mId) => {
-    console.log(mId)
     let sql = `delete from members where id='${mId}'`
     let con = await oracledb.getConnection(dbConfig)
     let result = 0
