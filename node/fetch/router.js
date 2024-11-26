@@ -9,5 +9,10 @@ module.exports = (app) => {
     router.put("/members", ctrl.modify)
     router.delete("/members/:id", ctrl.del)
 
+    router.get("/register_view", ctrl.registerView)
+    router.get("/id_check", ctrl.idCheck)
+    router.get("/view_member", ctrl.viewMember)
+    router.get("/quiz_members", ctrl.quizMembers)
+
     return router
 }

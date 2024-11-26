@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npx supervisor app03"
+    "start": "npx supervisor app02"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
