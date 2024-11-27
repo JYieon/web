@@ -1,0 +1,16 @@
+create table paging(
+num number not null,
+title varchar2(30) not null,
+pdate varchar2(10) not null,
+count number not null,
+primary key(num)
+);
+create sequence test_num;
+
+
+
+npm install express --save
+npm install ejs --save
+npm install oracledb@5.5.0 --save
+npm install supervisor --save
+npm install body-parser --save
