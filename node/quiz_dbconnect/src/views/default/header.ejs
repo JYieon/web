@@ -1,13 +1,27 @@
-<a href="/">HOME</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/static/css/header.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="main">
+        <a href="/"><h3>CARE LAB</h3></a>
+    </div>
 
-<script>
-    console.log("아무거나")
-    console.log(document.cookie)
-    if (document.cookie.indexOf("isLogin=true") !== -1) {
-        document.write('<a href="/member/logout">로그아웃</a>');
-    } else {
-        document.write('<a href="/member/login">로그인</a>');
-    }
-</script>
- 
-<a href="/member/listCheck">회원정보</a>
+    <div id="choice">
+        <a href="/">HOME</a>
+        <a href="/board/list">게시판</a>
+        <script>
+            if (document.cookie.indexOf("isLogin=true") !== -1) {
+                document.write('<a href="/member/logout">로그아웃</a>');
+            } else {
+                document.write('<a href="/member/login">로그인</a>');
+            }
+        </script>
+        <a href="/member/listCheck">회원정보</a>    
+    </div>
+</body>
+</html>

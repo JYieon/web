@@ -1,0 +1,33 @@
+<%- include("../default/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 98%;
+            margin: 1% 1%;
+        }
+        table > th:nth-child(2) {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>번호</th><th>id</th><th>제목</th><th>날짜</th><th>조회수</th>
+            <th>원본 이미지 이름</th><th>변경 이미지 이름</th>
+        </tr>
+        <% if(!list[0]){ %>
+            <tr><th colspan="7">등록된 글이 없습니다</th></tr>
+        <% } %>
+        <tr>
+            <td colspan="7"><a href="/board/write_form">글 작성</a></td>
+        </tr>
+    </table>
+</body>
+</html>

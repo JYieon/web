@@ -21,17 +21,16 @@ const register = async (req, res) => {
 
 const loginCheck = async (req, res) => {
     let check = await ser.loginCheck(req.body)
-    console.log(check)
+    console.log(req.body.id)
     let msg = `<script>`
     if(check == "notPwd"){
         msg += `alert("비밀번호가 틀렸습니다");`
     }else if(check == "notId"){
         msg += `alert("존재하지 않는 아이디입니다");`
     }else{
-        // req.session.username = req.body.id
-        // req.session.name = check
         msg += `alert("${check}님 환영합니다^^");`
         res.cookie("isLogin", true)
+        res.cookie("id", req.body.id)
     }
     msg += `location.href="/"</script>`
 
