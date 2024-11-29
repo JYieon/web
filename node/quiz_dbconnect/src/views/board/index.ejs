@@ -1,0 +1,42 @@
+<%- include("../default/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%= console.log(index) %>
+    <h3>- 개 인 정 보 -</h3>
+    <table border="1">
+        <tr>
+            <th>글 번호</th><td><%= index.WRITE_NO %></td>
+            <th>작성자</th><td><%= index.ID %></td>
+        </tr>
+        <tr>
+            <th>제목</th><td><%= index.TITLE %></td>
+            <th>등록일자</th><td><%= index.SAVE_DATE %></td>
+        </tr>
+        <tr>
+            <th>내용</th><td><%= index.CONTENT %></td>
+                <th colspan="2">
+                    <% if(!index.CHANGE_FILE_NAME){ %>
+                        이미지가 없습니다
+                    <% }else{ %>
+                        <img src="/board/file_down?img=<%= fileName %>" width="100" height="100" id="img">
+                    <% } %>
+                </th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button type="button" onclick="location.href='/board/modify_form?no=<%= index.WRITE_NO %>'">수정하기</button>
+                <button type="button" onclick="location.href='/board/del?no=<%= index.WRITE_NO %>'">삭제하기</button>
+                <button>답글달기</button>
+                <button type="button" onclick="location.href='/board/list'">리스트로 돌아가기</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

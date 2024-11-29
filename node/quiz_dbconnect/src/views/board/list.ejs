@@ -24,9 +24,32 @@
         </tr>
         <% if(!list[0]){ %>
             <tr><th colspan="7">등록된 글이 없습니다</th></tr>
+        <% }else{ %>
+            <% list.forEach(data => { %>
+                <tr>
+                    <td><%= data.WRITE_NO %></td>
+                    <td><%= data.ID %></td>
+                    <td><a href="/board/index?no=<%= data.WRITE_NO %>"><%= data.TITLE %></a></td>
+                    <td><%= data.SAVE_DATE %></td>
+                    <td><%= data.HIT %></td>
+                    <td><%= data.ORIGIN_FILE_NAME %></td>
+                    <td><%= data.CHANGE_FILE_NAME %></td>
+                </tr>
+            <% }) %>
         <% } %>
         <tr>
-            <td colspan="7"><a href="/board/write_form">글 작성</a></td>
+            <td colspan="7">
+                <% if(start > 1){ %>
+                    <button onclick="location.href='/board/list?start=<%= start - 1 %>'">이전</button>                
+                <% } %>
+                <% for(let i = 1; i <= page; i++){ %>
+                    <a href="/board/list?start=<%= i %>"><%= i %></a>
+                <% } %>
+                <% if(start < page){ %>
+                    <button onclick="location.href='/board/list?start=<%= start + 1 %>'">다음</button>
+                <% } %>
+                <a href="/board/write_form">글 작성</a>
+            </td>
         </tr>
     </table>
 </body>

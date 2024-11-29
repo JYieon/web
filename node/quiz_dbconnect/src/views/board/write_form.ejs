@@ -1,22 +1,12 @@
+<%- include("../default/header.ejs") %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        const readURL = (file) => {
-            const f = file.files[0]
-            console.log(f)
-            if(f != ""){
-                let reader = new FileReader()
-                reader.readAsDataURL(f)
-                reader.onload = (e) => {
-                    document.querySelector("#preview").src = e.target.result    
-                }
-            }
-        }
-    </script>
+    <script src="/static/js/image_read.js"></script>
 </head>
 <body>
     <form action="/board/write" method="post" enctype="multipart/form-data">
@@ -28,7 +18,6 @@
         <b>내용</b><br>
         <textarea name="content" cols="30" rows="5"></textarea><hr>
         <b>이미지파일 첨부</b><br>
-        <!-- <button>파일선택</button> -->
         <input type="file" name="file_name" onchange="readURL(this)"><br>
         <img id="preview" src="#" width="100" height="100" alt="이미지 없음"><br>
         <hr>
