@@ -4,11 +4,17 @@ const makeMsg = (msg, url) => {
     return `<script>alert("${msg}");location.href="${url}";</script>`
 }
 
-const getList = async () => {
+const getList = async (start) => {
     if(!start) start = 1
     start = Number(start)
-    let list = await dao.getList()
-    return list.rows
+    const totalCnt = await dao.totalCnt()
+    const num = totalCnt.rows[0]['COUNT(*)']
+    const result = (num % 3 == 0)?0:1
+    const page = parseInt(num/3 + result)
+
+    const startNum = (start - 1) * 3
+    const list = await dao.getList(startNum)
+    return {list : list.rows, page, start}
 }
 
 

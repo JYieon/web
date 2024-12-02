@@ -4,8 +4,8 @@ const dbConfig = require("../../../config/database/db_config")
 oracledb.outFormat = oracledb.OBJECT
 oracledb.autoCommit = true
 
-const getList = async () => {
-    const sql = `select * from board`
+const getList = async (start) => {
+    const sql = `select * from board order by write_no desc offset ${start} rows fetch next 3 rows only`
     const con = await oracledb.getConnection(dbConfig)
     const result = await con.execute(sql)
     return result
@@ -58,4 +58,15 @@ const modifyIndex = async (body, num, file) => {
     }
 }
 
-module.exports = {getList, addList, viewIndex, hitUp, del, modifyIndex}
+const totalCnt = async () => {
+    let cnt
+    try{
+        const con = await oracledb.getConnection(dbConfig)
+        cnt = await con.execute(`select count(*) from paging`)
+    }catch(err){
+        console.log(err)
+    }
+    return cnt
+}
+
+module.exports = {getList, addList, viewIndex, hitUp, del, modifyIndex, totalCnt}

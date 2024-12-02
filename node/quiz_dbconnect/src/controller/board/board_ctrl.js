@@ -2,9 +2,9 @@ const ser = require("../../service/board/board_service")
 const mSer = require("../../service/member/member_service")
 
 async function list(req, res){
-    let list = await ser.getList(req.query.start)
-    console.log(list)
-    res.render("board/list", {list})
+    let data = await ser.getList(req.query.start)
+    // console.log(list)
+    res.render("board/list", {list : data.list, page : data.page, start : data.start})
 }
 
 function writeForm(req, res){
