@@ -7,6 +7,9 @@ module.exports = (app) => {
 
     const boardRouter = require("./board/board_router")
     app.use("/board", boardRouter)
+
+    const boardRepRouter = require("./board/board_reply_router")
+    app.use("/board_rep", boardRepRouter)
  
     const router = require("express").Router();
     router.get("/", (req, res) => {

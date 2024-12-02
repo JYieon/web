@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser")
 const app = express();
 app.use( bodyParser.urlencoded() );
+app.use( bodyParser.json() );
 app.use(cookieParser());
 
 app.set("views","./src/views")

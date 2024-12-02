@@ -7,6 +7,7 @@ const login = (req, res) => {
 
 const logout = (req, res) => {
     res.clearCookie("isLogin");
+    res.clearCookie("id")
     res.redirect("/")
 }
 

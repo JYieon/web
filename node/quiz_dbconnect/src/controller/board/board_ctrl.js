@@ -24,9 +24,10 @@ async function write(req, res){
 }
 
 async function index(req, res){
+    console.log(req.cookies.id)
     await ser.hitUp(req.query)
     let index = await ser.viewIndex(req.query)
-    res.render("board/index", {index, fileName : index.CHANGE_FILE_NAME})
+    res.render("board/index", {index, fileName : index.CHANGE_FILE_NAME, username : req.cookies.id})
 }
 
 function fileDownload(req, res){
